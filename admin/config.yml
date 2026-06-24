@@ -1,0 +1,54 @@
+# Decap CMS configuration for PPAF
+# Board members publish reports + photos here; changes are saved back to the site.
+
+backend:
+  name: git-gateway          # Uses Netlify Identity — no separate accounts to manage
+  branch: main               # Branch the CMS commits to (change if your repo uses another)
+
+# Where uploaded photos are stored / served from
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+# Friendlier editor: show a live preview path for reports
+site_url: "/"
+display_url: "/"
+
+# Allow editors to save drafts before publishing
+publish_mode: editorial_workflow
+
+collections:
+  - name: "reports"
+    label: "Reports"
+    description: "Field reports, updates, and photo stories from Haiti."
+    delete: false
+    files:
+      - name: "reports_list"
+        label: "All Reports"
+        file: "reports/index.json"
+        description: "Add a new entry to the list, fill it in, and publish."
+        fields:
+          - name: "reports"
+            label: "Reports"
+            label_singular: "Report"
+            widget: "list"
+            summary: "{{fields.date}} — {{fields.title}}"
+            fields:
+              - { name: "title", label: "Title", widget: "string", hint: "The headline of the report." }
+              - { name: "slug", label: "URL slug", widget: "string", hint: "Lowercase, words-with-dashes. Used in the web address, e.g. spring-demonstrations.", pattern: ['^[a-z0-9]+(?:-[a-z0-9]+)*$', "Use lowercase letters, numbers, and dashes only."] }
+              - { name: "date", label: "Date", widget: "date", format: "YYYY-MM-DD", default: "" }
+              - { name: "category", label: "Category", widget: "select", options: ["Field Report", "Education", "Program Update", "Event", "Announcement"], default: "Field Report" }
+              - { name: "author", label: "Author", widget: "string", required: false, hint: "Your name (optional)." }
+              - { name: "location", label: "Location", widget: "string", required: false, default: "Haiti", hint: "Where this took place (optional)." }
+              - { name: "cover", label: "Cover photo", widget: "image", required: false, hint: "Main image shown on the card and at the top of the report." }
+              - { name: "coverAlt", label: "Cover photo description", widget: "string", required: false, hint: "Describe the photo for screen readers and accessibility." }
+              - { name: "summary", label: "Short summary", widget: "text", hint: "One or two sentences shown on the report card." }
+              - { name: "body", label: "Report text", widget: "markdown", hint: "Write your full report here. You can add headings, bold text, lists, and links." }
+              - name: "gallery"
+                label: "Photo gallery"
+                widget: "list"
+                required: false
+                label_singular: "Photo"
+                summary: "{{fields.alt}}"
+                fields:
+                  - { name: "image", label: "Photo", widget: "image" }
+                  - { name: "alt", label: "Photo description", widget: "string", required: false }

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Reports — Field Notes &amp; Photos | PPAF</title>
+  <meta name="description" content="Field reports, photos, and updates from PPAF's solar cooking work in Haiti, published by our board and team.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Ccircle cx='24' cy='24' r='10' fill='%23F79009'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container">
+      <nav class="nav" aria-label="Primary">
+        <a class="brand" href="index.html" aria-label="PPAF home">
+          <svg class="brand__mark" viewBox="0 0 48 48" aria-hidden="true">
+            <circle cx="24" cy="24" r="8.5" fill="#F79009"/>
+            <g stroke="#E2710A" stroke-width="2.4" stroke-linecap="round">
+              <line x1="24" y1="3" x2="24" y2="10"/><line x1="24" y1="38" x2="24" y2="45"/>
+              <line x1="3" y1="24" x2="10" y2="24"/><line x1="38" y1="24" x2="45" y2="24"/>
+              <line x1="9" y1="9" x2="14" y2="14"/><line x1="34" y1="34" x2="39" y2="39"/>
+              <line x1="39" y1="9" x2="34" y2="14"/><line x1="14" y1="34" x2="9" y2="39"/>
+            </g>
+          </svg>
+          <span class="brand__name">PPAF<small>Harnessing the Sun</small></span>
+        </a>
+        <button class="nav__toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Open menu"><span></span></button>
+        <div class="nav__menu" id="nav-menu">
+          <ul class="nav__links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="our-work.html">Our Work</a></li>
+            <li><a href="about.html">Who We Are</a></li>
+            <li><a href="history.html">History</a></li>
+            <li><a href="supporters.html">Supporters</a></li>
+            <li><a href="reports.html">Reports</a></li>
+            <li><a href="get-involved.html">Get Involved</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+          <div class="nav__cta"><a class="btn btn--primary" href="get-involved.html#donate">Donate</a></div>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <div class="nav__scrim" aria-hidden="true"></div>
+
+  <main id="main">
+    <!-- Single-article view target (populated by JS when ?slug= is present) -->
+    <div id="report-article"></div>
+
+    <!-- List view (hidden by JS when viewing a single article) -->
+    <div id="report-list-view">
+      <section class="page-hero">
+        <div class="container page-hero__inner">
+          <div class="breadcrumb"><a href="index.html">Home</a> / Reports</div>
+          <span class="eyebrow">Reports</span>
+          <h1>Field notes from Haiti</h1>
+          <p>Updates, photos, and stories from the field — published by PPAF board members and our team. New reports appear here as they're posted.</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div id="report-list" aria-live="polite">
+            <div class="report-grid">
+              <div class="skeleton skel-card"></div>
+              <div class="skeleton skel-card"></div>
+              <div class="skeleton skel-card"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="index.html" aria-label="PPAF home">
+            <svg class="brand__mark" viewBox="0 0 48 48" aria-hidden="true">
+              <circle cx="24" cy="24" r="8.5" fill="#FFB347"/>
+              <g stroke="#FFD089" stroke-width="2.4" stroke-linecap="round">
+                <line x1="24" y1="3" x2="24" y2="10"/><line x1="24" y1="38" x2="24" y2="45"/>
+                <line x1="3" y1="24" x2="10" y2="24"/><line x1="38" y1="24" x2="45" y2="24"/>
+                <line x1="39" y1="9" x2="34" y2="14"/><line x1="14" y1="34" x2="9" y2="39"/>
+                <line x1="9" y1="9" x2="14" y2="14"/><line x1="34" y1="34" x2="39" y2="39"/>
+              </g>
+            </svg>
+            <span class="brand__name">PPAF<small>Public-Private Alliance Foundation</small></span>
+          </a>
+          <p>Helping Haiti harness the sun — clean, safe, affordable solar cooking for families across the country.</p>
+        </div>
+        <div><h4>Explore</h4>
+          <ul class="footer-links">
+            <li><a href="our-work.html">Our Work</a></li>
+            <li><a href="about.html">Who We Are</a></li>
+            <li><a href="supporters.html">Supporters</a></li>
+            <li><a href="reports.html">Reports</a></li>
+            <li><a href="get-involved.html">Get Involved</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div><h4>Reach us</h4>
+          <ul class="footer-links">
+            <li><a href="mailto:ppafoundation@gmail.com">ppafoundation@gmail.com</a></li>
+            <li><a href="tel:+19149240108">(914) 924-0108</a></li>
+            <li>166 Edgars Lane,<br>Hastings-on-Hudson, NY 10706</li>
+            <li><a href="get-involved.html#donate">Donate</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span id="year">2026</span> Public-Private Alliance Foundation. A registered nonprofit.</p>
+        <p>UN Global Compact participant · GlobalGiving vetted</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Toggle between list and single-article view based on ?slug=
+    (function () {
+      var hasSlug = new URLSearchParams(location.search).has("slug");
+      if (hasSlug) {
+        var lv = document.getElementById("report-list-view");
+        if (lv) lv.style.display = "none";
+      } else {
+        var av = document.getElementById("report-article");
+        if (av) av.style.display = "none";
+      }
+    })();
+  </script>
+  <script src="js/main.js"></script>
+  <script src="js/reports.js"></script>
+</body>
+</html>
