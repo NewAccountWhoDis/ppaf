@@ -10,6 +10,49 @@
     return Array.from(document.querySelectorAll(".gallery-story:not([hidden]) [data-lightbox]"));
   }
 
+  /* ---- Mobile photo rail controls ---- */
+  document.querySelectorAll(".gallery-story").forEach(function (story) {
+    var rail = story.querySelector(".gallery-grid");
+    var title = story.querySelector("h3");
+    if (!rail || !title) return;
+
+    var controls = document.createElement("div");
+    controls.className = "gallery-rail-controls";
+    controls.innerHTML =
+      '<div class="gallery-rail-buttons">' +
+        '<button type="button" class="gallery-rail-button gallery-rail-button--prev" aria-label="Previous photos in ' + title.textContent + '">&larr;</button>' +
+        '<button type="button" class="gallery-rail-button gallery-rail-button--next" aria-label="Next photos in ' + title.textContent + '">&rarr;</button>' +
+      '</div>';
+    rail.insertAdjacentElement("afterend", controls);
+
+    var previous = controls.querySelector(".gallery-rail-button--prev");
+    var next = controls.querySelector(".gallery-rail-button--next");
+
+    function updateRail() {
+      var max = Math.max(0, rail.scrollWidth - rail.clientWidth);
+      var atStart = rail.scrollLeft <= 4;
+      var atEnd = rail.scrollLeft >= max - 4;
+      previous.disabled = atStart;
+      next.disabled = atEnd;
+    }
+
+    function moveRail(direction) {
+      var photo = rail.querySelector("[data-lightbox]");
+      var gap = parseFloat(getComputedStyle(rail).columnGap) || 10;
+      var distance = photo ? photo.getBoundingClientRect().width + gap : rail.clientWidth * 0.8;
+      rail.scrollBy({
+        left: direction * distance,
+        behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"
+      });
+    }
+
+    previous.addEventListener("click", function () { moveRail(-1); });
+    next.addEventListener("click", function () { moveRail(1); });
+    rail.addEventListener("scroll", updateRail, { passive: true });
+    window.addEventListener("resize", updateRail);
+    updateRail();
+  });
+
   filterButtons.forEach(function (button) {
     button.addEventListener("click", function () {
       var filter = button.dataset.filter;
