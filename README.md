@@ -15,6 +15,7 @@ Static HTML/CSS/JS (no build step) plus **Decap CMS** so board members can publi
 | `about.html` | Mission, board & team bios, history, founder in memoriam |
 | `history.html` | PPAF's story from its UN origins through Madagascar, the Dominican Republic, and Haiti |
 | `supporters.html` | Historical directory of organizations that supported or collaborated with PPAF |
+| `gallery.html` | Photo journal of solar cooking competitions, training, meals, and community events |
 | `reports.html` | Reports list **and** individual report view (`reports.html?slug=...`) |
 | `get-involved.html` | Donate, volunteer, intern, supporters |
 | `contact.html` | Contact form (Netlify) + contact details |
